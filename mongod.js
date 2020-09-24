@@ -1,16 +1,24 @@
 const mongoose = require("mongoose");
 // this conn string should come from configuration file
 mongoose
-  .connect("mongodb://localhost:27017/myapp", { useNewUrlParser: true })
+  .connect("mongodb://localhost:27017/myapp", {
+    useNewUrlParser: true
+  })
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("could not connect"));
 //Use debug here
 
 const blasterSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  name: {
+    type: String,
+    required: true
+  },
   style: String,
   tags: [String],
-  dateMade: { type: Date, default: Date.now },
+  dateMade: {
+    type: Date,
+    default: Date.now
+  },
   isAvailable: Boolean,
 });
 
@@ -24,7 +32,7 @@ async function createBlaster() {
     tags: ["performant", "small"],
     isAvailable: true,
   });
-
+  // ok
   try {
     blaster.validate();
   } catch (ex) {
@@ -67,10 +75,20 @@ async function getBlaster() {
   // .skip((pageNumber -1) * pagesize)
   // .limit(pagesize)
 
-  const blasters = await Blaster.find({ name: { $gt: 10, $lte: 20 } })
+  const blasters = await Blaster.find({
+      name: {
+        $gt: 10,
+        $lte: 20
+      }
+    })
     .limit(10)
-    .sort({ name: 1 })
-    .select({ name: 1, tags: 1 });
+    .sort({
+      name: 1
+    })
+    .select({
+      name: 1,
+      tags: 1
+    });
   console.log(blasters);
 }
 
