@@ -1,22 +1,54 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 
 class Counter extends Component {
-  state = {
-    count: 0,
-  };
+  // only executed upon first time creation
+
+  // renderTags() {
+  //   if (this.state.tags.length === 0) return <p>there are no tags</p>;
+  //   return (
+  //     <ul>
+  //       {this.state.tags.length === 3 && "there are 3 tags"}
+  //       {this.state.tags.map((tag) => (
+  //         <li key={tag}>{tag}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+  // naming conventtion, name  it handle"action"
+
   render() {
+    let classes = this.getClasses();
     return (
       <React.Fragment>
-        <span>{this.formatCount()}</span>
-        <button>Increment</button>
+        {this.props.children}
+        <span className={classes}>{this.formatCount()}</span>
+        <button
+          onClick={() => this.props.onIncrement(this.props.counter)}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger"
+        >
+          Delete
+        </button>
       </React.Fragment>
     );
   }
 
+  getClasses() {
+    let classes = "btn m-2 btn-";
+    classes += this.props.counter.value === 0 ? "warning" : "danger";
+    return classes;
+  }
+
   formatCount() {
     // jsx expressions are just like javascript objects.
-    const { count } = this.state;
-    return count === 0 ? <h1>Zero</h1> : count;
+    const { value: count } = this.props.counter;
+    return count === 0 ? "Zero" : count;
   }
 }
 
