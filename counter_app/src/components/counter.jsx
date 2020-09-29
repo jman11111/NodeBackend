@@ -3,7 +3,9 @@ import "bootstrap/dist/css/bootstrap.css";
 
 class Counter extends Component {
   // only executed upon first time creation
-
+  componentDidUpdate(prevProps, prevState) {
+    // you can compare previoous state/props to see if you should make ajax call
+  }
   // renderTags() {
   //   if (this.state.tags.length === 0) return <p>there are no tags</p>;
   //   return (
@@ -20,27 +22,39 @@ class Counter extends Component {
   render() {
     let classes = this.getClasses();
     return (
-      <React.Fragment>
-        {this.props.children}
-        <span className={classes}>{this.formatCount()}</span>
-        <button
-          onClick={() => this.props.onIncrement(this.props.counter)}
-          className="btn btn-secondary btn-sm"
-        >
-          Increment
-        </button>
-        <button
-          onClick={() => this.props.onDelete(this.props.counter.id)}
-          className="btn btn-danger"
-        >
-          Delete
-        </button>
-      </React.Fragment>
+      <div className="row">
+        <div className="col-1">
+          <span className={classes}>{this.formatCount()}</span>
+        </div>
+        <div className="col">
+          {this.props.children}
+
+          <button
+            onClick={() => this.props.onIncrement(this.props.counter)}
+            className="m-1 btn btn-secondary btn-sm"
+          >
+            +
+          </button>
+          <button
+            onClick={() => this.props.onDecrement(this.props.counter)}
+            className="m-1 btn btn-secondary btn-sm"
+            disabled={this.props.counter.value === 0 ? "disabled" : ""}
+          >
+            -
+          </button>
+          <button
+            onClick={() => this.props.onDelete(this.props.counter.id)}
+            className="ml-2 btn btn-danger"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
     );
   }
 
   getClasses() {
-    let classes = "btn m-2 btn-";
+    let classes = "mr-3 btn btn-";
     classes += this.props.counter.value === 0 ? "warning" : "danger";
     return classes;
   }
