@@ -4,7 +4,9 @@ class NavBar extends Component {
   state = {};
   render() {
     return (
-      <nav class="navbar navbar-light bg-light">{this.props.children}</nav>
+      <nav className="navbar navbar-dark bg-dark p-3">
+        {this.props.children}
+      </nav>
     );
   }
 }

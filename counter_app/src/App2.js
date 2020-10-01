@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Home from "./components/home";
 import Sculptures from "./components/sculptures";
@@ -11,19 +11,19 @@ class App2 extends Component {
   render() {
     return (
       <div>
-        <NavBar className="navbar navbar-inverse">
+        <NavBar>
           <div>
-            <a className="m-3" href="/">
+            <Link className="p-4" to="/">
               Home
-            </a>
-            <a className="m-3" href="/sculptures">
+            </Link>
+            <Link className="p-4" to="/sculptures">
               Sculptures
-            </a>
+            </Link>
           </div>
         </NavBar>
         <div className="content">
           <Switch>
-            <Route exact path="/sculptures" component={Sculptures} />
+            <Route exact path="/sculptures" component={() => <Sculptures />} />
             <Route path="/" component={Home} />
           </Switch>
         </div>
