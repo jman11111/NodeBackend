@@ -8,6 +8,7 @@ class ThumbnailCard extends Component {
         <img
           src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
           className="img-thumbnail"
+          alt=""
         ></img>
         <p>{this.props.name}</p>
         <p>{this.props.description}</p>
