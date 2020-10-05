@@ -14,7 +14,7 @@ class Sculptures extends Component {
     currentPage: 1,
     sculptures: [],
     years: [],
-    selectedYear: null,
+    selectedYear: { name: "All Time" },
     sortOptions: [],
     selectedSortOption: { path: "", order: "" },
   };
@@ -217,13 +217,15 @@ class Sculptures extends Component {
               </ul>
             </div>
           </div>
+          <div className="row justify-content-center">
+            <Paginator
+              itemsCount={totalcount}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={this.handlePageChange}
+            />
+          </div>
         </div>
-        <Paginator
-          itemsCount={totalcount}
-          pageSize={pageSize}
-          currentPage={currentPage}
-          onPageChange={this.handlePageChange}
-        />
       </div>
     );
   }

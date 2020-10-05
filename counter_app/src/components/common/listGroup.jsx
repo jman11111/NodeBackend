@@ -19,7 +19,7 @@ const ListGroup = ({
                 : element[textProperty]
             }
             className={
-              element === selectedItem
+              element[textProperty] === selectedItem[textProperty]
                 ? "list-group-item active"
                 : "list-group-item"
             }
