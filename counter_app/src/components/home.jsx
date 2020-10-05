@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+import Header from "./common/header";
 import Homebody from "./homebody";
 
 const Home = () => {

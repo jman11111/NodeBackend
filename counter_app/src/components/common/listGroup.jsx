@@ -1,20 +1,23 @@
 import React from "react";
 //text property and value property are string that represent fields on passed in items, element[valueProperty] is equivalent to element.valueProperty
-const ListGroup = (props) => {
-  const {
-    items,
-    selectedItem,
-    onItemSelect,
-    textProperty,
-    valueProperty,
-  } = props;
+const ListGroup = ({
+  items,
+  selectedItem,
+  onItemSelect,
+  textProperty,
+  valueProperty,
+}) => {
   return (
     <ul className="list-group">
       {items.map((element) => {
         return (
           <li
             onClick={() => onItemSelect(element)}
-            key={element[valueProperty]}
+            key={
+              element[valueProperty]
+                ? element[valueProperty]
+                : element[textProperty]
+            }
             className={
               element === selectedItem
                 ? "list-group-item active"
