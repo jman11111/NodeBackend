@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 /* <img
           src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"
@@ -8,6 +9,13 @@ import React, { Component } from "react";
 
 class ThumbnailCard extends Component {
   state = {};
+
+  handleSave = () => {
+    // lets them go back to previous page
+    this.props.history.push("/not-found");
+    // .replace will not allow them to go back, useful for when someone has logged in, yuo dont want them going back to login page
+  };
+
   render() {
     return (
       <div className="w-25 border border-secondary">
