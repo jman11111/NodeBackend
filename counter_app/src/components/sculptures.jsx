@@ -7,6 +7,7 @@ import ListGroup from "./common/listGroup";
 import SortBy from "./common/sortBy";
 import _ from "lodash";
 import GridGenerator from "./common/gridGenerator";
+import SearchForm from "./common/searchForm";
 
 class Sculptures extends Component {
   state = {
@@ -16,6 +17,7 @@ class Sculptures extends Component {
     years: [],
     selectedYear: { name: "All Time" },
     sortOptions: [],
+    searchPhrase: "",
     selectedSortOption: { path: "", order: "" },
   };
 
@@ -143,6 +145,13 @@ class Sculptures extends Component {
     ];
   }
 
+  handleSearchSubmit = (searchphrase) => {
+    //Call server to submit login
+    //redirect to logged in page
+    this.setState({ searchPhrase: searchphrase });
+    console.log(searchphrase, "Submitted");
+  };
+
   getPagedData = () => {
     const {
       selectedYear,
@@ -150,16 +159,25 @@ class Sculptures extends Component {
       selectedSortOption,
       currentPage,
       pageSize,
+      searchPhrase,
     } = this.state;
-    const filtered =
+    const fromYear =
       selectedYear && selectedYear._id
         ? allSculptures.filter(
             (sculpture) => sculpture.year.name === selectedYear.name
           )
         : allSculptures;
 
+    const searchResults =
+      searchPhrase === ""
+        ? fromYear
+        : fromYear.filter((sculpture) => {
+            const re = new RegExp(searchPhrase.toLowerCase());
+            return re.test(sculpture.name.toLowerCase());
+          });
+
     const sorted = _.orderBy(
-      filtered,
+      searchResults,
       [selectedSortOption.path],
       [selectedSortOption.order]
     );
@@ -186,7 +204,9 @@ class Sculptures extends Component {
         <Header>Sculptures</Header>
         <div className="container">
           <div className="row my-row">
+            <SearchForm onSearchSubmit={this.handleSearchSubmit} />
             <SortBy
+              className="col-10"
               onSort={this.handleSort}
               sortOptions={sortOptions}
               selectedSortOption={selectedSortOption}

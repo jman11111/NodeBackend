@@ -4,6 +4,7 @@ import NavBar from "./components/common/navbar";
 import Home from "./components/home";
 import LoginForm from "./components/loginForm";
 import Sculptures from "./components/sculptures";
+import RegisterForm from "./components/registerForm";
 
 //go from most specific to least inside switch component
 
@@ -36,6 +37,11 @@ class App2 extends Component {
               exact
               path="/sculptures"
               render={(props) => <Sculptures {...props} />}
+            />
+            <Route
+              exact
+              path="/register"
+              render={(props) => <RegisterForm {...props} />}
             />
             <Route path="/" exact component={Home} />
             <Route

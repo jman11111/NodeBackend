@@ -25,9 +25,14 @@ class SortBy extends Component {
   };
 
   render() {
-    const { sortOptions, textProperty, selectedSortOption } = this.props;
+    const {
+      sortOptions,
+      textProperty,
+      selectedSortOption,
+      className,
+    } = this.props;
     return (
-      <div className="container">
+      <div className={{ className } + " container"}>
         <div className="row">
           {sortOptions.map((option) => {
             return (
