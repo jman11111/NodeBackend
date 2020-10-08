@@ -8,6 +8,7 @@ import SortBy from "./common/sortBy";
 import _ from "lodash";
 import GridGenerator from "./common/gridGenerator";
 import SearchForm from "./common/searchForm";
+import axios from "axios";
 
 class Sculptures extends Component {
   state = {
@@ -33,7 +34,8 @@ class Sculptures extends Component {
     this.setState({ selectedYear: year, currentPage: 1 });
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    const { data: posts } = await axios.get();
     this.setState({
       years: [{ name: "All Time" }, ...this.getYears()],
       sortOptions: [...this.getSortOptions()],
@@ -56,7 +58,16 @@ class Sculptures extends Component {
     ];
   }
 
+  handleAdd = async () => {
+    const obj = { title: "a", body: "b" };
+    //returns response object that you can destructure, data here has what we want right now.
+    const { data: post } = await axios.post("endpoint", obj);
+    const posts = [post, ...this.state.sculptures];
+    this.setState({ sculptures: posts });
+  };
+
   getSculptures() {
+    // const {data: posts} = await axios.get();
     return [
       {
         name: "Yogo",
