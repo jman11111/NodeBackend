@@ -39,8 +39,9 @@ class Sculptures extends Component {
     this.setState({
       years: [{ name: "All Time" }, ...this.getYears()],
       sortOptions: [...this.getSortOptions()],
-      sculptures: this.getSculptures(),
+      sculptures: await this.getSculptures(),
     });
+    console.log(this.state.sculptures);
   }
 
   getYears() {
@@ -66,94 +67,10 @@ class Sculptures extends Component {
   //   this.setState({ sculptures: posts });
   // };
 
-  getSculptures() {
-    // const {data: posts} = await axios.get();
-    return [
-      {
-        name: "Yogo",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "A real swell guy",
-        tags: ["front"],
-      },
-      {
-        name: "Hero",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "Being the best he can be",
-        tags: ["front"],
-      },
-      {
-        name: "Snake",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "Slithering around",
-        tags: ["back"],
-      },
-      {
-        name: "Ogre",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "Large and in charge",
-        tags: ["front"],
-      },
-      {
-        name: "Mage",
-        image: "",
-        year: { _id: "2020", name: "2020" },
-        description: "Magic man",
-        tags: ["side"],
-      },
-      {
-        name: "Eye",
-        image: "",
-        year: { _id: "2020", name: "2020" },
-        description: "just an eye",
-        tags: ["front"],
-      },
-      {
-        name: "Yogon",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "A real swellt guy",
-        tags: ["front"],
-      },
-      {
-        name: "Heron",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "Being the best he can bet",
-        tags: ["front"],
-      },
-      {
-        name: "Snaken",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "Slithering aroundt",
-        tags: ["back"],
-      },
-      {
-        name: "Ogren",
-        image: "",
-        year: { _id: "2019", name: "2019" },
-        description: "Large and in charget",
-        tags: ["front"],
-      },
-      {
-        name: "Magen",
-        image: "",
-        year: { _id: "2020", name: "2020" },
-        description: "Magic mant",
-        tags: ["side"],
-      },
-      {
-        name: "Eyen",
-        image: "",
-        year: { _id: "2020", name: "2020" },
-        description: "just an eyet",
-        tags: ["front"],
-      },
-    ];
+  async getSculptures() {
+    const { data } = await axios.get("http://localhost:3001/api/sculptures/");
+    console.log(data);
+    return data;
   }
 
   handleSearchSubmit = (searchphrase) => {
@@ -237,9 +154,9 @@ class Sculptures extends Component {
                   {sculptures.map((sculpture) => {
                     return (
                       <ThumbnailCard
-                        key={sculpture.name}
+                        key={sculpture._id}
                         name={sculpture.name}
-                        year={sculpture.year.name}
+                        year={sculpture.dateMade}
                         description={sculpture.description}
                       />
                     );

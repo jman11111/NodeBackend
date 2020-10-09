@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const sculptures = require("./routes/sculptures");
 const config = require("config");
 const startupDebugger = require("debug")("app:startup");
@@ -14,9 +15,10 @@ startupDebugger("Starting up");
 console.log(config.get("name"));
 
 app.use(express.json());
+app.use(cors());
 app.use("/api/sculptures", sculptures);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
