@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Aron",
+    "description": "A metal creature",
+    "dateMade": "2020-02-23T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Bero",
+    "description": "Born in the ocean",
+    "dateMade": "2020-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Chen",
+    "description": "Cunning and quick",
+    "dateMade": "2017-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Zero",
+    "description": "Nothing",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Logus",
+    "description": "Flys low",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Unor",
+    "description": "Jumps high",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Genya",
+    "description": "Quick, happy",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Ronny",
+    "description": "Very spooky",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Nora",
+    "description": "Shelled in metal",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  },
+  {
+    "name": "Joto",
+    "description": "Sleepy",
+    "dateMade": "2018-01-24T21:42:47.912Z",
+    "photoURL": "https://fakeurl"
+  }
+]

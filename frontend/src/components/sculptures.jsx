@@ -35,7 +35,7 @@ class Sculptures extends Component {
   };
 
   async componentDidMount() {
-    const { data: posts } = await axios.get();
+    //const { data: posts } = await axios.get();
     this.setState({
       years: [{ name: "All Time" }, ...this.getYears()],
       sortOptions: [...this.getSortOptions()],
@@ -58,13 +58,13 @@ class Sculptures extends Component {
     ];
   }
 
-  handleAdd = async () => {
-    const obj = { title: "a", body: "b" };
-    //returns response object that you can destructure, data here has what we want right now.
-    const { data: post } = await axios.post("endpoint", obj);
-    const posts = [post, ...this.state.sculptures];
-    this.setState({ sculptures: posts });
-  };
+  // handleAdd = async () => {
+  //   const obj = { title: "a", body: "b" };
+  //   //returns response object that you can destructure, data here has what we want right now.
+  //   const { data: post } = await axios.post("endpoint", obj);
+  //   const posts = [post, ...this.state.sculptures];
+  //   this.setState({ sculptures: posts });
+  // };
 
   getSculptures() {
     // const {data: posts} = await axios.get();

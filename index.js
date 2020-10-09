@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const blasters = require("./routes/blasters");
+const sculptures = require("./routes/sculptures");
 const config = require("config");
 const startupDebugger = require("debug")("app:startup");
 const databaseDebugger = require("debug")("app:db");
@@ -14,7 +14,7 @@ startupDebugger("Starting up");
 console.log(config.get("name"));
 
 app.use(express.json());
-app.use("/api/blasters", blasters);
+app.use("/api/sculptures", sculptures);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

@@ -5,7 +5,7 @@ const Homebody = () => {
     <div>
       <h2 className="m-5 text-center">About Me</h2>
       <p className="text-center">
-        My name is Jack Broncato(Legal name Jacob), and this is my website I am
+        My name is Jack Broncato (Legal name Jacob), and this is my website I am
         using to practice React.js/Node.js.
       </p>
       <p className="text-center">
