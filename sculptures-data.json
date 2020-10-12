@@ -1,62 +1,75 @@
 [
   {
-    "name": "Aron",
-    "description": "A metal creature",
-    "dateMade": "2020-02-23T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Cyclops",
+    "description": "Has a helmet because I didnt want to sculpt a face",
+    "dateMade": "2020-09-21T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/Cyclops.jpg"
   },
   {
-    "name": "Bero",
-    "description": "Born in the ocean",
-    "dateMade": "2020-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Big Jaw",
+    "description": "Made a big jaw so I could practice teeth",
+    "dateMade": "2019-01-04T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/bigJaw.jpg"
   },
   {
-    "name": "Chen",
-    "description": "Cunning and quick",
-    "dateMade": "2017-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Castle Rock",
+    "description": "Biggest sculpt I've done, brick texturing was difficult",
+    "dateMade": "2020-04-28T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/castleRock.jpg"
   },
   {
-    "name": "Zero",
-    "description": "Nothing",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Crocodilian",
+    "description": "Eraser clay, a crocodile man",
+    "dateMade": "2017-13-12T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/crocodilian.jpg"
   },
   {
-    "name": "Logus",
-    "description": "Flys low",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Eraser Man",
+    "description": "Eraser clay, made sophomore year of college",
+    "dateMade": "2017-09-11T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/eraserMan.jpg"
   },
   {
-    "name": "Unor",
-    "description": "Jumps high",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Goat Man",
+    "description": "I wanted to practice animal heads",
+    "dateMade": "2018-10-12T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/goatMan.jpg"
   },
   {
-    "name": "Genya",
-    "description": "Quick, happy",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Ogre",
+    "description": "I really enjoyed this one, I messed up on the upper body ribs",
+    "dateMade": "2018-02-28T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/ogre.jpg"
   },
   {
-    "name": "Ronny",
-    "description": "Very spooky",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Psy Cat",
+    "description": "I just wanted something with three eyes",
+    "dateMade": "2020-02-07T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/psyCat.jpg"
   },
   {
-    "name": "Nora",
-    "description": "Shelled in metal",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Robot Suit",
+    "description": "Very fun sculpt, one of my favorites",
+    "dateMade": "2020-08-25T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/robotSuit.jpg"
   },
   {
-    "name": "Joto",
-    "description": "Sleepy",
-    "dateMade": "2018-01-24T21:42:47.912Z",
-    "photoURL": "https://fakeurl"
+    "name": "Root Man",
+    "description": "More practice on fine texturing and negative sculpting",
+    "dateMade": "2020-05-27T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/rootman.jpg"
+  },
+  {
+    "name": "Snake",
+    "description": "Wanted more practice on small teeth",
+    "dateMade": "2020-08-05T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/snek.jpg"
+  },
+  {
+    "name": "Wizard",
+    "description": "Came out really well, his boots were delicate work",
+    "dateMade": "2020-09-15T21:42:47.912Z",
+    "photoURL": "https://testbucketjackbroncato.s3.amazonaws.com/wizard.jpg"
   }
+  
 ]

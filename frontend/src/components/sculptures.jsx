@@ -46,6 +46,8 @@ class Sculptures extends Component {
 
   getYears() {
     return [
+      { _id: "2017", name: "2017" },
+      { _id: "2018", name: "2018" },
       { _id: "2019", name: "2019" },
       { _id: "2020", name: "2020" },
     ];
@@ -53,9 +55,8 @@ class Sculptures extends Component {
 
   getSortOptions() {
     return [
-      { path: "year", order: "asc" },
-      { path: "description", order: "asc" },
-      { path: "name", order: "asc" },
+      { path: "dateMade", label: "date", order: "asc" },
+      { path: "name", label: "name", order: "asc" },
     ];
   }
 
@@ -69,6 +70,12 @@ class Sculptures extends Component {
 
   async getSculptures() {
     const { data } = await axios.get("http://localhost:3001/api/sculptures/");
+    const datetrimmed = data.map((sculpture) => {
+      sculpture.dateMade = sculpture.dateMade.substring(
+        0,
+        sculpture.dateMade.indexOf("T")
+      );
+    });
     console.log(data);
     return data;
   }
@@ -92,7 +99,8 @@ class Sculptures extends Component {
     const fromYear =
       selectedYear && selectedYear._id
         ? allSculptures.filter(
-            (sculpture) => sculpture.year.name === selectedYear.name
+            (sculpture) =>
+              sculpture.dateMade.substring(0, 4) === selectedYear.name
           )
         : allSculptures;
 
@@ -156,7 +164,8 @@ class Sculptures extends Component {
                       <ThumbnailCard
                         key={sculpture._id}
                         name={sculpture.name}
-                        year={sculpture.dateMade}
+                        date={sculpture.dateMade}
+                        photoURL={sculpture.photoURL}
                         description={sculpture.description}
                       />
                     );
