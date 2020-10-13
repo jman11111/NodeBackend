@@ -1,0 +1,3 @@
+Make an actual README
+Support authentication/implement security
+implement user schema/route/etc
