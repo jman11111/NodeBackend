@@ -13,6 +13,7 @@ const databaseDebugger = require("debug")("app:db");
 startupDebugger("Starting up");
 
 console.log(config.get("name"));
+console.log(process.env.API_CONN);
 
 app.use(express.json());
 app.use(cors());

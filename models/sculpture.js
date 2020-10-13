@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config();
 // this conn string should come from configuration file
+const conn = process.env.API_CONN;
 mongoose
-  .connect("mongodb://localhost:27017/personalWebsite", {
+  .connect(conn, {
     useNewUrlParser: true,
   })
   .then(() => console.log("Connected to MongoDB"))
